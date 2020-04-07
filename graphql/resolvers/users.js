@@ -27,7 +27,7 @@ module.exports = {
       const { errors, valid } = validateLoginInput(username, password);
 
       if (!valid) {
-        throw new UserInputError('Errors', { errors });
+        throw new UserInputError('Error', { errors });
       }
 
       const user = await User.findOne({ username });
@@ -66,7 +66,7 @@ module.exports = {
         confirmPassword
       );
       if (!valid) {
-        throw new UserInputError('Errors', { errors });
+        throw new UserInputError('Error', { errors });
       }
 
       //NOTE user already exists check
