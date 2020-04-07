@@ -16,7 +16,7 @@ import LikeButton from '../components/LikeButton';
 import DeleteButton from '../components/DeleteButton';
 import MyPopup from '../util/MyPopup';
 
-function SinglePost(props) {
+const SinglePost = (props) => {
   const postId = props.match.params.postId;
   const { user } = useContext(AuthContext);
   const commentInputRef = useRef(null);
@@ -42,7 +42,7 @@ function SinglePost(props) {
     }
   });
 
-  function deletePostCallback() {
+  const deletePostCallback = () => {
     props.history.push('/');
   }
 

@@ -6,7 +6,7 @@ import { Button, Confirm, Icon } from 'semantic-ui-react';
 import { FETCH_POSTS_QUERY } from '../util/graphql';
 import MyPopup from '../util/MyPopup';
 
-function DeleteButton({ postId, callback }) {
+const DeleteButton = ({ postId, callback }) => {
   const [confirmOpen, setConfirmOpen] = useState(false);
 
   const mutation = DELETE_POST_MUTATION;

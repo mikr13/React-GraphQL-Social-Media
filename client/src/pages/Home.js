@@ -17,16 +17,18 @@ function Home() {
   if (data) {
     const posts = data.getPosts;
     return (
-      <Grid columns={3}>
-        <Grid.Row className="page-title">
-          <h1>Recent Posts</h1>
-        </Grid.Row>
+      <Grid columns={1}>
         <Grid.Row>
-          {user && (
+        {user && (
             <Grid.Column>
               <PostForm />
             </Grid.Column>
           )}
+        </Grid.Row>
+        <Grid.Row>
+          <h1>Recent Posts</h1>
+        </Grid.Row>
+        <Grid.Row>
           {loading ? (
             <h1>Loading posts..</h1>
           ) : (

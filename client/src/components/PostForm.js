@@ -6,7 +6,12 @@ import { useMutation } from '@apollo/react-hooks';
 import { useForm } from '../util/hooks';
 import { FETCH_POSTS_QUERY } from '../util/graphql';
 
-function PostForm() {
+const PostForm = () => {
+  
+  const createPostCallback = () => {
+    createPost();
+  }
+
   const { values, onChange, onSubmit } = useForm(createPostCallback, {
     body: ''
   });
@@ -22,10 +27,6 @@ function PostForm() {
       values.body = '';
     }
   });
-
-  function createPostCallback() {
-    createPost();
-  }
 
   return (
     <>
